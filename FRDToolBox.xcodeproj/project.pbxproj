@@ -10,6 +10,8 @@
 		280133971D457B57009E831C /* FRDToolBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 280133961D457B57009E831C /* FRDToolBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2801339E1D457B57009E831C /* FRDToolBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280133931D457B57009E831C /* FRDToolBox.framework */; };
 		280133A31D457B57009E831C /* FRDToolBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280133A21D457B57009E831C /* FRDToolBoxTests.swift */; };
+		280133AE1D457BA8009E831C /* BootStrapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280133AD1D457BA8009E831C /* BootStrapItem.swift */; };
+		280133B11D457CE5009E831C /* AppBootStrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280133B01D457CE5009E831C /* AppBootStrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		2801339D1D457B57009E831C /* FRDToolBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FRDToolBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		280133A21D457B57009E831C /* FRDToolBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRDToolBoxTests.swift; sourceTree = "<group>"; };
 		280133A41D457B57009E831C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		280133AD1D457BA8009E831C /* BootStrapItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootStrapItem.swift; sourceTree = "<group>"; };
+		280133B01D457CE5009E831C /* AppBootStrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBootStrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		280133951D457B57009E831C /* FRDToolBox */ = {
 			isa = PBXGroup;
 			children = (
+				280133AF1D457CC8009E831C /* AppBootStrapper */,
 				280133961D457B57009E831C /* FRDToolBox.h */,
 				280133981D457B57009E831C /* Info.plist */,
 			);
@@ -84,6 +89,15 @@
 				280133A41D457B57009E831C /* Info.plist */,
 			);
 			path = FRDToolBoxTests;
+			sourceTree = "<group>";
+		};
+		280133AF1D457CC8009E831C /* AppBootStrapper */ = {
+			isa = PBXGroup;
+			children = (
+				280133B01D457CE5009E831C /* AppBootStrapper.swift */,
+				280133AD1D457BA8009E831C /* BootStrapItem.swift */,
+			);
+			name = AppBootStrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +208,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				280133B11D457CE5009E831C /* AppBootStrapper.swift in Sources */,
+				280133AE1D457BA8009E831C /* BootStrapItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +326,7 @@
 		280133A81D457B57009E831C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -320,12 +337,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.freerangedevelopers.FRDToolBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		280133A91D457B57009E831C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
