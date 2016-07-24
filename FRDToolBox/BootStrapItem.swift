@@ -6,9 +6,9 @@
 //  Copyright © 2016 Sebastien Windal. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol BootStrapItem {
+public protocol BootStrapItem {
     func name() -> String
     func setup()
 }
