@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class AppBootStrapper: NSObject {
+open class AppBootStrapper: NSObject {
     
     public override init() {
         super.init()
     }
     
-    public func setup(items: [BootStrapItem]) {
+    open func setup(_ items: [BootStrapItem]) {
         for item in items {
             print("Bootstrapping \(item.name())");
             item.setup()
