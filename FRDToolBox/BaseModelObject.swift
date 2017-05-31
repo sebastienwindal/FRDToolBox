@@ -16,18 +16,18 @@ public protocol BaseModel:Mappable {
 
 open class BaseModelObject:BaseModel {
     
-    public required init?(map: Map) {
+    required public init?(map: Map) {
         
     }
     
-    public func mapping(map: Map) {
+    open func mapping(map: Map) {
     }
     
-    public class func indexRoute() -> String {
+    open class func indexRoute() -> String {
         fatalError("Subclasses need to implement the `indexRoute()` method.")
     }
     
-    public class func getRoute() -> String {
+    open class func getRoute() -> String {
         fatalError("Subclasses need to implement the `getRoute()` method.")
     }
     
