@@ -12,6 +12,10 @@
 		280133A31D457B57009E831C /* FRDToolBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280133A21D457B57009E831C /* FRDToolBoxTests.swift */; };
 		280133AE1D457BA8009E831C /* BootStrapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280133AD1D457BA8009E831C /* BootStrapItem.swift */; };
 		280133B11D457CE5009E831C /* AppBootStrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280133B01D457CE5009E831C /* AppBootStrapper.swift */; };
+		28AA7B5C1EDF7C0C00164757 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA7B5B1EDF7C0C00164757 /* Result.swift */; };
+		28AA7B601EDF7EA800164757 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AA7B5F1EDF7EA800164757 /* ObjectMapper.framework */; };
+		28AA7B631EDF7F1B00164757 /* BaseModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA7B621EDF7F1B00164757 /* BaseModelObject.swift */; };
+		28AA7B661EDF7F5800164757 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AA7B651EDF7F5800164757 /* RestClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,10 @@
 		280133A41D457B57009E831C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		280133AD1D457BA8009E831C /* BootStrapItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootStrapItem.swift; sourceTree = "<group>"; };
 		280133B01D457CE5009E831C /* AppBootStrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBootStrapper.swift; sourceTree = "<group>"; };
+		28AA7B5B1EDF7C0C00164757 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		28AA7B5F1EDF7EA800164757 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		28AA7B621EDF7F1B00164757 /* BaseModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModelObject.swift; sourceTree = "<group>"; };
+		28AA7B651EDF7F5800164757 /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AA7B601EDF7EA800164757 /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +66,7 @@
 		280133891D457B57009E831C = {
 			isa = PBXGroup;
 			children = (
+				28AA7B5F1EDF7EA800164757 /* ObjectMapper.framework */,
 				280133951D457B57009E831C /* FRDToolBox */,
 				280133A11D457B57009E831C /* FRDToolBoxTests */,
 				280133941D457B57009E831C /* Products */,
@@ -75,6 +85,9 @@
 		280133951D457B57009E831C /* FRDToolBox */ = {
 			isa = PBXGroup;
 			children = (
+				28AA7B641EDF7F4200164757 /* Rest */,
+				28AA7B611EDF7EFE00164757 /* Model */,
+				28AA7B5A1EDF7BCC00164757 /* Utils */,
 				280133AF1D457CC8009E831C /* AppBootStrapper */,
 				280133961D457B57009E831C /* FRDToolBox.h */,
 				280133981D457B57009E831C /* Info.plist */,
@@ -98,6 +111,30 @@
 				280133AD1D457BA8009E831C /* BootStrapItem.swift */,
 			);
 			name = AppBootStrapper;
+			sourceTree = "<group>";
+		};
+		28AA7B5A1EDF7BCC00164757 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				28AA7B5B1EDF7C0C00164757 /* Result.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		28AA7B611EDF7EFE00164757 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28AA7B621EDF7F1B00164757 /* BaseModelObject.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		28AA7B641EDF7F4200164757 /* Rest */ = {
+			isa = PBXGroup;
+			children = (
+				28AA7B651EDF7F5800164757 /* RestClient.swift */,
+			);
+			name = Rest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +247,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28AA7B5C1EDF7C0C00164757 /* Result.swift in Sources */,
 				280133B11D457CE5009E831C /* AppBootStrapper.swift in Sources */,
 				280133AE1D457BA8009E831C /* BootStrapItem.swift in Sources */,
+				28AA7B661EDF7F5800164757 /* RestClient.swift in Sources */,
+				28AA7B631EDF7F1B00164757 /* BaseModelObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +373,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FRDToolBox/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -353,6 +397,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FRDToolBox/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
