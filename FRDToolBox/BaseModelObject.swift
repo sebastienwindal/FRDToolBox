@@ -9,25 +9,25 @@
 import Foundation
 import ObjectMapper
 
-protocol BaseModel:Mappable {
+public protocol BaseModel:Mappable {
     static func indexRoute() -> String
     static func getRoute() -> String
 }
 
-class BaseModelObject:BaseModel {
+open class BaseModelObject:BaseModel {
     
     public required init?(map: Map) {
         
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
     }
     
-    class func indexRoute() -> String {
+    public class func indexRoute() -> String {
         fatalError("Subclasses need to implement the `indexRoute()` method.")
     }
     
-    class func getRoute() -> String {
+    public class func getRoute() -> String {
         fatalError("Subclasses need to implement the `getRoute()` method.")
     }
     

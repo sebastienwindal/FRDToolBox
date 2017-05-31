@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-enum RestClientError: Error {
+public enum RestClientError: Error {
     case InvalidArgumentError
     case InvalidResponseError
     case HTTPResponseError(errCode: Int)
@@ -18,16 +18,16 @@ enum RestClientError: Error {
 }
 
 
-class RestClient {
+public class RestClient {
     fileprivate var rootURL = ""
     
-    static var sharedInstance = RestClient()
+    public static var sharedInstance = RestClient()
     
-    func setup(with rootURL:String) {
+    public func setup(with rootURL:String) {
         self.rootURL = rootURL
     }
     
-    func index<T:BaseModel>(_ objtype:T.Type, completion: @escaping (Result<[T]>) -> Void) {
+    public func index<T:BaseModel>(_ objtype:T.Type, completion: @escaping (Result<[T]>) -> Void) {
         
         let urlStr: String = "\(rootURL)\(T.indexRoute())"
         
