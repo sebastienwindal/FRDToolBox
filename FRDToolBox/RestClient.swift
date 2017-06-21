@@ -62,7 +62,9 @@ public class RestClient {
     public func get<T:BaseModel>(_ objType:T.Type, id:String, completion: @escaping (Result<T>) -> Void) {
         var url:URL = self.rootURL
         url.appendPathComponent(T.getRoute())
-        url.appendPathComponent(id)
+        if !id.isEmpty {
+            url.appendPathComponent(id)
+        }
         
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
