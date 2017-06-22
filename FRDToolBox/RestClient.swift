@@ -110,13 +110,13 @@ public class RestClient {
         }
     }
     
-    public func update<T:BaseModel>(_ objType:T.Type, id:String, model:T, completion: @escaping (Result<T>) -> Void) {
+    public func put<T:BaseModel>(_ objType:T.Type, id:String, model:T, completion: @escaping (Result<T>) -> Void) {
         var url:URL = self.rootURL
-        url.appendPathComponent(T.updateRoute())
+        url.appendPathComponent(T.putRoute())
         url.appendPathComponent(id)
         
         var request : URLRequest = URLRequest(url: url)
-        request.httpMethod = "UPDATE"
+        request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         let json = model.toJSONString()

@@ -13,7 +13,7 @@ public protocol BaseModel:Mappable {
     static func indexRoute() -> String
     static func getRoute() -> String
     static func postRoute() -> String
-    static func updateRoute() -> String
+    static func putRoute() -> String
     static func deleteRoute() -> String
 }
 
@@ -42,8 +42,8 @@ open class BaseModelObject:BaseModel {
         fatalError("Subclasses need to implement the `postRoute()` method.")
     }
     
-    open class func updateRoute() -> String {
-        fatalError("Subclasses need to implement the `updateRoute()` method.")
+    open class func putRoute() -> String {
+        fatalError("Subclasses need to implement the `putRoute()` method.")
     }
     
     open class func deleteRoute() -> String {
