@@ -110,10 +110,12 @@ public class RestClient {
         }
     }
     
-    public func put<T:BaseModel>(_ objType:T.Type, id:String, model:T, completion: @escaping (Result<T>) -> Void) {
+    public func put<T:BaseModel>(_ objType:T.Type, id:String? = nil, model:T, completion: @escaping (Result<T>) -> Void) {
         var url:URL = self.rootURL
         url.appendPathComponent(T.putRoute())
-        url.appendPathComponent(id)
+        if let id = id {
+            url.appendPathComponent(id)
+        }
         
         var request : URLRequest = URLRequest(url: url)
         request.httpMethod = "PUT"
