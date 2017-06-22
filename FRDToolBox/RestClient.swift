@@ -122,6 +122,9 @@ public class RestClient {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         let json = model.toJSONString()
+        if let j = json {
+            print(j)
+        }
         request.httpBody = json?.data(using: .utf8)
         
         send(request: request) { (result) in
